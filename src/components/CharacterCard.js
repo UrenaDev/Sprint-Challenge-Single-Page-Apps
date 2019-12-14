@@ -1,11 +1,19 @@
 import React from "react";
+import styled from "styled-components";
 
-export default function CharacterCard({ character }) {
-  const { name, image, id } = character;
+const Cards = styled.div`
+  border: 1px solid black;
+  margin: 3%;
+  border-radius: 10px;
+  padding: 3%;
+`;
+
+export default function CharacterCard({ name, species, status }) {
   return (
-    <div className='characterCard' key={id}>
-      <img src= {image} />
-      <h2> {name} </h2>
-    </div>
+    <Cards>
+      <h3>Name:{name}</h3>
+      <p>Species:{species}</p>
+      <p>Status:{status}</p>
+    </Cards>
   );
 }
